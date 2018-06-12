@@ -22,11 +22,11 @@ public class D1_U02_E04_Operadores {
 		double divisao = numero1 / numero2;
 		double modulo = numero1 % numero2;
 		
-		System.out.println("Soma = " + soma);
-		System.out.println("Subtração = " + subtracao);
-		System.out.println("Multiplicação = " + multiplicacao);
-		System.out.println("Divisão = " + divisao);
-		System.out.println("Módulo = " + modulo);
+		System.out.println("Soma =  " + soma);
+		System.out.println("Subtração =  " + subtracao);
+		System.out.println("Multiplicação =  " + multiplicacao);
+		System.out.println("Divisão =  " + divisao);
+		System.out.println("Módulo =  " + modulo);
 	}
 
 }
