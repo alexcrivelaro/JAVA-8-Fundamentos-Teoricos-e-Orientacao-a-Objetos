@@ -1,9 +1,12 @@
 /*--------------------------------------------------------------------------*\
  Criação das classes e do programa principal SisalucarApp   
  Atribuição de valores aos objetos das classes  
+ Criar método gerarRelatorioLocacao
 \* -------------------------------------------------------------------------*/
 
 package unidade3.sisalucar;
+
+import java.time.LocalDate;
 
 public class SisalucarApp {
 
@@ -48,6 +51,14 @@ public class SisalucarApp {
 		locacao.idLocacao = 1;
 		locacao.idCarro = idCarro;
 		locacao.idCliente = idCliente;
+		locacao.datainicial = LocalDate.now();
+		locacao.datafinal = LocalDate.now().plusDays(2);
+		locacao.valorLocado = 2 * 99.90f; 
+	}
+	
+	public void gerarRelatorioLocacao(LocalDate ...datas) // exemplo de varargs 
+	{
+		float totalFaturado = 2 * 99.90f;
 	}
 }
 
