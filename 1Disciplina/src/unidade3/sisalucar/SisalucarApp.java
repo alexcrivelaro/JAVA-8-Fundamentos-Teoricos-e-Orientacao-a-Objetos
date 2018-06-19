@@ -9,6 +9,8 @@ package unidade3.sisalucar;
 import java.time.LocalDate;
 
 public class SisalucarApp {
+	
+	static int totalCarros = 0;
 
 	public static void main(String[] args) {
 		
@@ -20,8 +22,11 @@ public class SisalucarApp {
 		carro1.ano = 2015;
 		carro1.fabricate = "volkswagen";
 		
-		Carro carro2 = new Carro(); // 2º objeto carro
+		// SisalucarApp.totalCarros = SisalucarApp.totalCarros + 1; 
+		// - está dentro do método estático - é um membro de classe
+		                totalCarros = totalCarros + 1;
 		
+		Carro carro2 = new Carro(); // 2º objeto carro
 		
 		Cliente cliente1 = new Cliente();
 		cliente1.idCliente = 1;
@@ -39,14 +44,21 @@ public class SisalucarApp {
      *               ou criação do objeto
      *               (valores que serão armazenados no objeto 
      * */
+		
+		SisalucarApp sisalucar = new SisalucarApp();
+		sisalucar.realizarLocacao(carro1.idCarro, cliente1.idCliente, carro1.valorDiaria);
+		
+		// SisalucarApp.gerarRelatorioLocacao(carro1, LocalDate.now(), LocalDate.now().plusDays(5));
+		//  - está dentro do método estático - é um membro de classe
+		                gerarRelatorioLocacao(carro1, LocalDate.now(), LocalDate.now().plusDays(5));
     
 		System.out.println(carro1);   // imprime o local da memória
 		System.out.println(carro2);   // imprime o local da memória
 		System.out.println(cliente1); // imprime o local da memória
 		System.out.println(cliente2); // imprime o local da memória
 	}
-	
-	public void realizarLocacao(long idCarro, long idCliente) {
+
+	public void realizarLocacao(long idCarro, long idCliente, float valorDiaria) {
 		Locacao locacao = new Locacao();
 		locacao.idLocacao = 1;
 		locacao.idCarro = idCarro;
@@ -56,7 +68,7 @@ public class SisalucarApp {
 		locacao.valorLocado = 2 * 99.90f; 
 	}
 	
-	public void gerarRelatorioLocacao(LocalDate ...datas) // exemplo de varargs 
+	public static void gerarRelatorioLocacao(Carro carro1, LocalDate ...datas) // exemplo de varargs 
 	{
 		float totalFaturado = 2 * 99.90f;
 	}
